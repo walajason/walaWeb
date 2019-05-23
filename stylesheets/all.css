@@ -11019,7 +11019,7 @@ body .container .button-effect a:last-child {
 }
 
 .centered {
-  position: absolute;
+  position: relative;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
