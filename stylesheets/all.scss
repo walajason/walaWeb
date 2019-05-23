@@ -1,6 +1,6 @@
-@import "./../../LP1/node_modules/bootstrap/scss/bootstrap";
-@import "./../../LP1/node_modules/bootstrap/scss/functions";
-@import "./../../ApplePage/stylesheets/variables";
+@import "./../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./../../../node_modules/bootstrap/scss/functions";
+@import "./../../stylesheets/variables";
 $midnight: #E53935;
 $clouds: #ecf0f1;
 // General
@@ -391,5 +391,53 @@ body {
             transform: scale(1, 1);
             text-indent: 0;
         }
+    }
+}
+
+//* 文字閃爍
+* {
+    font-family: 'Kumar One Outline', cursive;
+}
+
+.div-bk1 {
+    background: #232323;
+}
+
+.centered {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.neon-effect {
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.neon-effect:nth-of-type(1) {
+    text-shadow: 0 0 5px rgba(67, 232, 216, 1), 0 0 10px rgba(67, 232, 216, 1), 0 0 20px rgba(67, 232, 216, 1), 0 0 40px rgba(67, 232, 216, 1);
+    animation: neon-shine 2s linear infinite;
+}
+
+.neon-effect:nth-of-type(2) {
+    text-shadow: 0 0 5px rgba(247, 245, 41, .1), 0 0 10px rgba(247, 245, 41, 1), 0 0 20px rgba(247, 245, 41, 1), 0 0 40px rgba(247, 245, 41, 1);
+    animation: neon-shine 2s 1s linear infinite;
+}
+
+.neon-effect:nth-of-type(3) {
+    text-shadow: 0 0 5px rgba(255, 65, 65, 1), 0 0 10px rgba(255, 65, 65, 1), 0 0 20px rgba(255, 65, 65, 1), 0 0 40px rgba(255, 65, 65, 1);
+    animation: neon-shine 2s linear infinite;
+}
+
+@keyframes neon-shine {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        color: #232323;
     }
 }
