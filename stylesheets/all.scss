@@ -1,6 +1,6 @@
 @import "./../../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./../../../node_modules/bootstrap/scss/functions";
-@import "./../../stylesheets/variables";
+@import "./../stylesheets/variables";
 $midnight: #E53935;
 $clouds: #ecf0f1;
 // General
@@ -404,7 +404,7 @@ body {
 }
 
 .centered {
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
