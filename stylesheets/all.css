@@ -11015,11 +11015,11 @@ body .container .button-effect a:last-child {
 }
 
 .div-bk1 {
-  background: #232323;
+  background: #36363a;
 }
 
 .centered {
-  position: relative;
+  position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
