@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -10561,168 +10562,70 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
-body {
-  color: #E53935;
-  background: #ecf0f1;
-  padding: 0 1em 1em;
+/* 文字閃爍*/
+* {
+  font-family: 'Kumar One Outline', cursive;
 }
 
-h1 {
-  margin: 10;
-  line-height: 2;
-  text-align: center;
-  color: #212529;
+.div-bk1 {
+  background: #36363a;
 }
 
-h2 {
-  margin: 0 0 .5em;
-  font-weight: normal;
-}
-
-input {
+.centered {
   position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.row .col {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.row .col:last-child {
-  margin-left: 1em;
-}
-
-/* Accordion styles */
-.tabs {
-  border-radius: 8px;
-  overflow: hidden;
-  -webkit-box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
-}
-
-.tab {
-  width: 100%;
-  color: white;
-  overflow: hidden;
-}
-
-.tab-label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 1em;
-  background: #E53935;
-  font-weight: bold;
-  cursor: pointer;
-  /* Icon */
-}
-
-.tab-label:hover {
-  background: #cd1e1a;
-}
-
-.tab-label::after {
-  content: "\276F";
-  width: 1em;
-  height: 1em;
   text-align: center;
-  -webkit-transition: all .35s;
-  transition: all .35s;
+  font-size: 2.5em;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
-.tab-content {
-  max-height: 0;
-  padding: 0 1em;
-  color: #E53935;
-  background: white;
-  -webkit-transition: all .35s;
-  transition: all .35s;
+.neon-effect {
+  color: #fff;
+  letter-spacing: 2px;
 }
 
-.tab-close {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding: 1em;
-  font-size: 0.75em;
-  background: #E53935;
-  cursor: pointer;
+.neon-effect:nth-of-type(1) {
+  text-shadow: 0 0 5px #43e8d8, 0 0 10px #43e8d8, 0 0 20px #43e8d8, 0 0 40px #43e8d8;
+  -webkit-animation: neon-shine 2s linear infinite;
+          animation: neon-shine 2s linear infinite;
 }
 
-.tab-close:hover {
-  background: #cd1e1a;
+.neon-effect:nth-of-type(2) {
+  text-shadow: 0 0 5px rgba(247, 245, 41, 0.1), 0 0 10px #f7f529, 0 0 20px #f7f529, 0 0 40px #f7f529;
+  -webkit-animation: neon-shine 2s 1s linear infinite;
+          animation: neon-shine 2s 1s linear infinite;
 }
 
-input:checked + .tab-label {
-  background: #cd1e1a;
+.neon-effect:nth-of-type(3) {
+  text-shadow: 0 0 5px #ff4141, 0 0 10px #ff4141, 0 0 20px #ff4141, 0 0 40px #ff4141;
+  -webkit-animation: neon-shine 2s linear infinite;
+          animation: neon-shine 2s linear infinite;
 }
 
-input:checked + .tab-label::after {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+@-webkit-keyframes neon-shine {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    color: #232323;
+  }
 }
 
-input:checked ~ .tab-content {
-  max-height: 100vh;
-  padding: 1em;
+@keyframes neon-shine {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    color: #232323;
+  }
 }
-
-.header {
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-image: url(https://images.unsplash.com/photo-1554644275-252855179fc9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80);
-}
-
-.header-font-size {
-  color: red;
-  font-size: 50%;
-}
-
-.section1-font {
-  font-size: 50%;
-}
-
-.btn-outline-light {
-  color: #212529;
-}
-
-.bg-cover {
-  background-size: cover;
-  background-position: center center;
-}
-
-.bg-attachment-fixed {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
-.bg-attachment-scroll {
-  background-attachment: scroll;
-}
-
-.border-red {
-  color: red;
-}
-
-.section-font-color {
-  color: #1034d6;
-  background-color: rgba(240, 36, 36, 0.096);
-}
-/*# sourceMappingURL=all.css.map */
+/*# sourceMappingURL=a4.css.map */

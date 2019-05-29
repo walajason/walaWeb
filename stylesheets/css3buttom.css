@@ -10561,168 +10561,288 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
-body {
-  color: #E53935;
-  background: #ecf0f1;
-  padding: 0 1em 1em;
+/* CSS3 BUTTOM*/
+/* common styles !!!YOU DON'T NEED THEM */
+.bodybody {
+  background-color: #F1E9DA;
 }
 
-h1 {
-  margin: 10;
-  line-height: 2;
+.bodybody .container {
+  width: 850px;
+  margin: 70px auto 0px auto;
   text-align: center;
-  color: #212529;
 }
 
-h2 {
-  margin: 0 0 .5em;
-  font-weight: normal;
+.bodybody .container h1 {
+  font-family: 'Droid Serif', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  margin-bottom: 30px;
 }
 
-input {
+.bodybody .container h1 span {
+  font-weight: 700;
+  font-style: italic;
+  color: #D90368;
+  border-bottom: 2px dashed currentColor;
+}
+
+.bodybody .container .button-effect {
+  padding: 30px 0px;
+}
+
+.bodybody .container .button-effect h2 {
+  font-family: 'Droid Serif', serif;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.bodybody .container .button-effect a {
+  margin-right: 17px;
+}
+
+.bodybody .container .button-effect a:nth-child(2) {
+  background-color: #541388;
+}
+
+.bodybody .container .button-effect a:nth-child(3) {
+  background-color: #D90368;
+}
+
+.bodybody .container .button-effect a:nth-child(4) {
+  background-color: #104547;
+}
+
+.bodybody .container .button-effect a:nth-child(5) {
+  background-color: #4F000B;
+}
+
+.bodybody .container .button-effect a:nth-child(6) {
+  background-color: #F28123;
+}
+
+.bodybody .container .button-effect a:last-child {
+  margin-right: 0px;
+}
+
+/* button styles !!!YOU NEED THEM
+!!!ALSO YOU NEED TO ADD FONTWESOME */
+.effect {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  text-transform: capitalize;
+  /* background-color: - add your own background-color */
+  font-family: 'Roboto', sans-serif;
+  /* put your font-family */
+  font-size: 18px;
+  padding: 20px 0px;
+  width: 150px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* effect-1 styles */
+.effect.effect-1 {
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+}
+
+.effect.effect-1:before {
+  content: "\f178";
+  font-family: FontAwesome;
+  font-size: 15px;
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  right: 0;
+  top: 0;
   opacity: 0;
-  z-index: -1;
+  height: 100%;
+  width: 40px;
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
 }
 
-.row {
+.effect.effect-1:hover {
+  text-indent: -20px;
+}
+
+.effect.effect-1:hover:before {
+  opacity: 1;
+  text-indent: 0px;
+}
+
+/* effect-2 styles */
+.effect.effect-2 {
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+}
+
+.effect.effect-2:before {
+  content: "\f0a4";
+  font-family: FontAwesome;
+  font-size: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.row .col {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.row .col:last-child {
-  margin-left: 1em;
-}
-
-/* Accordion styles */
-.tabs {
-  border-radius: 8px;
-  overflow: hidden;
-  -webkit-box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
-}
-
-.tab {
-  width: 100%;
-  color: white;
-  overflow: hidden;
-}
-
-.tab-label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 1em;
-  background: #E53935;
-  font-weight: bold;
-  cursor: pointer;
-  /* Icon */
-}
-
-.tab-label:hover {
-  background: #cd1e1a;
-}
-
-.tab-label::after {
-  content: "\276F";
-  width: 1em;
-  height: 1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  right: -30px;
+  width: 30px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0px 6px 6px 0px;
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
   text-align: center;
-  -webkit-transition: all .35s;
-  transition: all .35s;
 }
 
-.tab-content {
-  max-height: 0;
-  padding: 0 1em;
-  color: #E53935;
-  background: white;
-  -webkit-transition: all .35s;
-  transition: all .35s;
+.effect.effect-2:hover {
+  text-indent: -30px;
 }
 
-.tab-close {
+.effect.effect-2:hover:before {
+  right: 0;
+  text-indent: 0px;
+}
+
+/* effect-3 styles */
+.effect.effect-3 {
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+}
+
+.effect.effect-3:before {
+  content: "\f178";
+  font-family: FontAwesome;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding: 1em;
-  font-size: 0.75em;
-  background: #E53935;
-  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 30px;
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
 }
 
-.tab-close:hover {
-  background: #cd1e1a;
+.effect.effect-3:hover {
+  text-indent: -9999px;
 }
 
-input:checked + .tab-label {
-  background: #cd1e1a;
+.effect.effect-3:hover:before {
+  top: 0;
+  text-indent: 0;
 }
 
-input:checked + .tab-label::after {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+/* effect-4 styles */
+.effect.effect-4 {
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
 }
 
-input:checked ~ .tab-content {
-  max-height: 100vh;
-  padding: 1em;
+.effect.effect-4:before {
+  content: "\f178";
+  font-family: FontAwesome;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 30px;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
 }
 
-.header {
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-image: url(https://images.unsplash.com/photo-1554644275-252855179fc9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80);
+.effect.effect-4:hover {
+  text-indent: -9999px;
 }
 
-.header-font-size {
-  color: red;
-  font-size: 50%;
+.effect.effect-4:hover:before {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  text-indent: 0;
 }
 
-.section1-font {
-  font-size: 50%;
+/* effect-5 styles */
+.effect.effect-5 {
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
 }
 
-.btn-outline-light {
-  color: #212529;
+.effect.effect-5:before {
+  content: "\f054";
+  font-family: FontAwesome;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  width: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0 50% 50% 0;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
 }
 
-.bg-cover {
-  background-size: cover;
-  background-position: center center;
+.effect.effect-5:hover {
+  text-indent: 30px;
 }
 
-.bg-attachment-fixed {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+.effect.effect-5:hover:before {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  text-indent: 0;
 }
-
-.bg-attachment-scroll {
-  background-attachment: scroll;
-}
-
-.border-red {
-  color: red;
-}
-
-.section-font-color {
-  color: #1034d6;
-  background-color: rgba(240, 36, 36, 0.096);
-}
-/*# sourceMappingURL=all.css.map */
+/*# sourceMappingURL=css3buttom.css.map */
