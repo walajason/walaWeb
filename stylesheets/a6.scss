@@ -1,0 +1,28 @@
+@import "./../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./../../../node_modules/bootstrap/scss/functions";
+@import "./../stylesheets/variables";
+
+/*把html任意標籤都變成按鈕 */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn {
+    background-color: #99aacc;
+    border: 1px solid #334466;
+    font-size: 16px;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 1s;
+}
+
+.btn:hover {
+    background-color: #7788aa;
+}
+
+.btn:active {
+    transform: translate(0px, 2px);
+}
