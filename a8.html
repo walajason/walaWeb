@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="./stylesheets/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Flexbox 運用</title>
+
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #cccccc;
+        }
+        
+        main>.item {
+            flex: none;
+            width: 300px;
+            margin: 10px;
+            background-color: #ffcccc;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav style="display:none;">
+        <div class="logo">Logo</div>
+        <div class="menu">Menu</div>
+        <div class="user">User</div>
+    </nav>
+    <main>
+        <div class="item">News 1<br/>Today is a good day.</div>
+        <div class="item">News 2</div>
+        <div class="item">News 3</div>
+    </main>
+</body>
+
+</html>

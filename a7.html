@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./stylesheets/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>回應式排版設定</title>
+    <style type="text/css">
+        .head {
+            background-color: #003344;
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .content {
+            width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .box {
+            width: 280px;
+            margin: 10px;
+            padding: 10px;
+            background-color: white;
+            /*下列二個設定可讓div不斷行且對其上緣*/
+            display: inline-block;
+            vertical-align: top;
+            text-align: left;
+        }
+        
+        .title {
+            font-weight: bold;
+            text-align: center;
+        }
+        /*判斷手機解析度, 處理center 的寬為100%, 這樣物件就會超出而自動往下排*/
+        
+        @media screen and (max-width: 600px) {
+            .content {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin: 0px;background-color: #eeeeee;">
+    <div class="head">回應式版面設計 display屬性</div>
+    <div class="content">
+        <div class="box">
+            <div class="title">block</div>
+            <div>元素以區塊的方式呈現,簡單來說當不做其他CSS設定時,元素的寬會與父元素的同寬,在白話一點也就遇到block屬性的元素,其同層元素會換行顯示</div>
+            <div>如p,h1~h6,div,ul等</div>
+        </div>
+        <div class="box">
+            <div class="title">inline</div>
+            <div>元素與為並排顯示,其容器大小以內容物判定,無法設定寬高,上下外距等屬性...</div>
+            <div>如a,span,em,strong,b,em等.....</div>
+        </div>
+        <div class="box">
+            <div class="title ">inline-block</div>
+            <div>簡單來說為排列方式以inline的方式呈現,但擁有block的屬性,可以設定寬高,上下外距等屬性</div>
+            <div>如 img等...</div>
+        </div>
+        <div class="box">
+            <div class="title ">none</div>
+            <div>其實這很簡單當我將元素設定成display:none此元素在網頁上就不顯示了。</div>
+            <div>其中CSS有個能見度visibility : hidden與display:none有些差別,前者雖不顯示但保有空間,後者不顯示也不佔空間。</div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
