@@ -5,35 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS 建構是函數運用</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>JS 建構式函數運用</title>
+    <style>
+        #div1 {
+            width: 50%;
+            line-height: 10px;
+            border: 1px solid;
+        }
+    </style>
     <script>
-        function Player() {
-            this.name = "John";
-            this.hp = 100;
-            this.fight = function() {
+        function fun2() {
+            var player = new Object();
+            player.name = "John";
+            player.hp = 100;
+            player.fight = function() {
                 this.hp = this.hp - 2;
             };
-            this.rest = function() {
+            player.rest = function() {
                 this.hp++;
             };
-            this.report = function() {
+            player.report = function() {
                 alert(this.name + ":" + this.hp);
             };
-        }
+            player.report();
+            player.fight();
+            player.report();
+        };
+        //
+        function Player(iname) {
+            this.name = iname;
+            this.hp = 100;
+            this.fight = function() {
+                this.hp = this.hp - 2
+            };
+            this.rest = function() {
+                this.hp += 2
+            };
+            this.report = function() {
+                alert(this.name + ": " + this.hp)
+            };
+        };
 
-        function play() {
-            var player1 = new player();
+        function fun1() {
+            var player1 = new Player('John');
             player1.fight();
-            var player2 = new player();
-            player2.rest();
+            player1.rest();
             player1.report();
+            var player2 = new Player('Mary');
+            player2.fight();
+            player2.rest();
             player2.report();
-        }
+            player2.rest();
+            player2.report();
+        };
     </script>
 </head>
 
 <body>
-    <button onclick="play()">玩我</button>
+    <div id="div1">
+        <p><span><</span>script<span>></span></span>
+        </p>
+        <p><span>function Player(iname) {</span></p>
+        <p><span>var player = new Object();</span></p>
+        <p><span> player.name = "John";</span></p>
+        <p><span>player.hp = 100;</span></p>
+        <p><span>player.fight = function() {</span></p>
+        <p><span>    this.hp = this.hp - 2;</span></p>
+        <p><span>};</span></p>
+        <p><span>player.rest = function() {</span></p>
+        <p><span>    this.hp++;</span></p>
+        <p><span>};</span></p>
+        <p><span>player.report = function() {</span></p>
+        <p><span>    alert(this.name + ":" + this.hp);</span></p>
+        <p><span>};</span></p>
+        <p><span>player.report();</span></p>
+        <p><span>player.fight();</span></p>
+        <p><span>player.report();</span></p>
+        <p><span>};</span></p>
+        <p><span><</span>/script<span>></span></span>
+        </p>
+    </div>
+    <button onclick="fun2();">FUNCTION宣告產生</button>
+    <button onclick="fun1();">建構式宣告</button>
 </body>
 
 </html>
