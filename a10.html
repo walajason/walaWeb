@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        function hideMenu(no) {
+            var item = document.getElementById("item" + no);
+            /*    if (item.style.display == "none") {
+                    item.style.display = "block";
+                    item.style.color = "red";
+                } else {
+                    item.style.display = "none"
+                };*/
+
+            item.classList.toggle("hide");
+        }
+    </script>
+    <style type="text/css">
+        .hide {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div onclick="hideMenu(1);">選單的標題</div>
+    <ui id="item1">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ui>
+    <div onclick="hideMenu(2);">選單的標題</div>
+    <ui id="item2">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ui>
+    <div onclick="hideMenu(3);">選單的標題</div>
+    <ui id="item3">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ui>
+</body>
+
+</html>

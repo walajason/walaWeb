@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        function over(mObj) {
+            mObj.style.color = "red";
+        };
+
+        function out(mObj) {
+            mObj.style.color = "black";
+        };
+        //用Javascript 的程式, 動態的註冊式建處理器(onclick="alert('test')")
+        function init() {
+            var btn = document.getElementById("btn");
+            var handler = function(e) {
+                alert(e.clientX + "," + e.clientY);
+            };
+            btn.addEventListener("click" /*事件名稱*/ , handler);
+            /*
+                1.使用者點擊了按鈕,觸發click事件
+                2.瀏覽器主動收集和事件有關的資訊,並製造出 Event Object 事件物件
+                   var eventObj=事件物件;
+                3.呼叫已經註冊的事件處理器(事件處理函式)
+                   handler(eventObj);
+            */
+        }
+    </script>
+
+</head>
+
+<body onload="init();">
+    <button id="btn">Click</button>
+    <span onmouseover="this.style.color='red';" onmouseout="this.style.color='black';">TEST</span>
+    <!--上述span可改為下列, 利用js來處理-->
+    <div onmouseover="over(this);" onmouseout="out(this);">TESTTEST</div>
+    <!--此處this 代表span-->
+
+
+</body>
+
+</html>
