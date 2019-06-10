@@ -28,6 +28,9 @@
                 3.呼叫已經註冊的事件處理器(事件處理函式)
                    handler(eventObj);
             */
+            document.addEventListener("keydown", function(e) { //匿名函式:用來直接當作事件處理器
+                alert(e.keyCode);
+            });
         }
     </script>
 
@@ -35,12 +38,6 @@
 
 <body onload="init();">
     <button id="btn">Click</button>
-    <span onmouseover="this.style.color='red';" onmouseout="this.style.color='black';">TEST</span>
-    <!--上述span可改為下列, 利用js來處理-->
-    <div onmouseover="over(this);" onmouseout="out(this);">TESTTEST</div>
-    <!--此處this 代表span-->
-
-
 </body>
 
 </html>
