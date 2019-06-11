@@ -18,8 +18,11 @@
         function init() {
             var btn = document.getElementById("btn");
             var handler = function(e) {
-                alert(e.clientX + "," + e.clientY);
+                alert("按鈕範圍內座標: " + e.clientX + "," + e.clientY + "," + e.type);
+                btn.innerHTML = "按壓任意建, 讀出按鍵碼";
+                btn.style.color = "red";
             };
+
             btn.addEventListener("click" /*事件名稱*/ , handler);
             /*
                 1.使用者點擊了按鈕,觸發click事件
@@ -29,7 +32,7 @@
                    handler(eventObj);
             */
             document.addEventListener("keydown", function(e) { //匿名函式:用來直接當作事件處理器
-                alert(e.keyCode);
+                alert("按鍵碼: " + e.keyCode);
             });
         }
     </script>
