@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Ajax 運用(A10)</title>
     <script type="text/javascript">
         function hideMenu(no) {
             var item = document.getElementById("item" + no);
@@ -18,20 +18,62 @@
 
             item.classList.toggle("hide");
         }
+
+        function getData(PageNa) {
+            //XMLHttpRequest 物件專門用來和伺服器做連線
+            var req = new XMLHttpRequest();
+            req.open("get", "http://127.0.0.1:5500/" + PageNa);
+            req.onload = function() { //load事件, 偵測連線的狀態結束
+                //連線完成
+                var content = document.getElementById("content");
+                //alert(this.responseText);
+                content.innerHTML = this.responseText;
+                var txt = document.getElementById("txt");
+                txt.innerText = this.responseText;
+            };
+            req.send(); //送出連線
+        }
+
+        function show(p1, p2) {
+            var obj1 = document.getElementById(p1);
+            var obj2 = document.getElementById(p2);
+            //obj1.classList.toggle("content");
+            //obj2.classList.toggle("content");
+            obj1.style.display = "block";
+            obj2.style.display = "block";
+        }
+
+        function hiden(p1, p2) {
+            var obj1 = document.getElementById(p1);
+            var obj2 = document.getElementById(p2);
+            obj1.style.display = "none";
+            obj2.style.display = "none";
+        }
     </script>
     <style type="text/css">
         .hide {
-            color: red;
             display: none;
+        }
+        
+        .content {
+            border-style: solid;
+            border-width: 1px;
+            border-color: red;
+            width: 50%;
+            height: auto;
+            /*下列二個設定可讓div不斷行且對其上緣*/
+            display: inline-block;
+            vertical-align: top;
+            text-align: left;
         }
     </style>
 </head>
 
 <body>
-    <div onclick="hideMenu(1);">選單的標題</div>
+    <div onclick="hideMenu(1);">Javascript AJAX</div>
     <ui id="item1">
-        <li>item1</li>
-        <li>item2</li>
+        <li onclick="getData('a11.html');" onmouseover="show('content','txt');" onmouseout="hiden('content','txt');">用Javascript 的程式, 動態的註冊式建處理器(A11)</li>
+        <li onclick="getData('a12.html')" ;>匿名函式:用來直接當作事件處理器(A12)</li>
         <li>item3</li>
     </ui>
     <div onclick="hideMenu(2);">選單的標題</div>
@@ -46,6 +88,8 @@
         <li>item2</li>
         <li>item3</li>
     </ui>
+    <div id="content"></div>
+    <div id="txt"></div>
 </body>
 
 </html>
