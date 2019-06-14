@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON基礎架構</title>
+    <script type="text/javascript">
+        //JavaScript函數建立:
+        var point = new Object();
+        point.x = 3;
+        point.y = 4;
+        point.get = function() {
+            alert("JavaScript函數建立" + this.x + "," + this.y);
+        };
+
+        //json函數宣告
+        //未排版寫法: var point1={"x":3,"y":4,"get":function(){alert(this.x+","+this.y)}}
+        var point1 = {
+                "x": 3,
+                "y": 4,
+                "get": function() {
+                    alert("JSON函數建立" + this.x + "," + this.y);
+                }
+            }
+            //
+        point.get();
+        console.log(point);
+        point1.get();
+        console.log(point1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

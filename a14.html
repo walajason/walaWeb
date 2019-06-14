@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS顏色變化</title>
+    <style>
+        /*顏色變化*/
+        
+        .black {
+            width: 300px;
+            height: 15px;
+            background: black;
+        }
+        
+        .white {
+            width: 300px;
+            height: 15px;
+            background: white;
+            animation: myfirst 5s;
+            animation-iteration-count: infinite;
+        }
+        
+        .f1_highlight {
+            width: 10px;
+            height: 50px;
+            /*     background: red;  */
+            animation: myfirst 0s;
+            animation-iteration-count: infinite;
+        }
+        
+        .f2_highlight {
+            width: 10px;
+            height: 100px;
+            /*     background: red;  */
+            animation: myfirst 6s;
+            animation-iteration-count: infinite;
+        }
+        
+        .f3_highlight {
+            width: 10px;
+            height: 100px;
+            /*     background: red;  */
+            animation: myfirst 7s;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes myfirst {
+            0% {
+                background: white;
+            }
+            25% {
+                background: blue;
+            }
+            50% {
+                background: yellow;
+            }
+            75% {
+                background: red;
+            }
+            100% {
+                background: #E53935;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="text-center">
+        <div class="row black"></div>
+        <div class="row white"></div>
+        <div class="row black"></div>
+        <div class="row white"></div>
+        <div class="row black"></div>
+        <div class="row white"></div>
+        <div class="row black"></div>
+        <div class="row white"></div>
+        <div class="row black"></div>
+        <div class="row white"></div>
+        <div class="row black"></div>
+    </section>
+</body>
+
+</html>

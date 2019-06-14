@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -22,6 +23,9 @@
         function getData(PageNa) {
             //XMLHttpRequest 物件專門用來和伺服器做連線
             var req = new XMLHttpRequest();
+            //var gPageAddr = "https://walajason.github.io/walaweb/"
+            var gPageAddr = "http://127.0.0.1:5500/";
+
             req.open("get", gPageAddr + PageNa);
             req.onload = function() { //load事件, 偵測連線的狀態結束
                 //連線完成
@@ -66,30 +70,44 @@
             vertical-align: top;
             text-align: left;
         }
+        
+        .menu:hover {
+            font-size: 20px;
+            color: blue;
+        }
+        
+        li:hover {
+            font-size: 20px;
+            color: red;
+        }
     </style>
+
 </head>
 
 <body>
-    <div onclick="hideMenu(1);">Javascript AJAX</div>
+    <div onclick="hideMenu(1);" class="menu">Javascript AJAX</div>
     <ui id="item1">
-        <li onclick="getData('a11.html');" onmouseover="show('content','txt');" onmouseout="hiden('content','txt');">用Javascript 的程式, 動態的註冊式建處理器(A11)</li>
-        <li onclick="getData('a12.html')" ;>匿名函式:用來直接當作事件處理器(A12)</li>
-        <li>item3</li>
+        <li onclick="getData('a11.html')">用Javascript 的程式, 動態的註冊式建處理器(A11)</li>
+        <li onclick="getData('a12.html')">匿名函式:用來直接當作事件處理器(A12)</li>
+        <li onclick="getData('a10.html')">XMLHttpRequest 物件專門用來和伺服器做連線</li>
     </ui>
-    <div onclick="hideMenu(2);">選單的標題</div>
+    <div onclick="hideMenu(2);" class="menu">選單的標題</div>
     <ui id="item2">
-        <li>item1</li>
-        <li>item2</li>
+        <li onclick="getData('a9.html')">JS 建構式函數運用</li>
+        <li onclick="getData('a14.html')">CSS顏色變化</li>
         <li>item3</li>
     </ui>
-    <div onclick="hideMenu(3);">選單的標題</div>
+    <div onclick="hideMenu(3);" class="menu">選單的標題</div>
     <ui id="item3">
         <li>item1</li>
         <li>item2</li>
-        <li>item3</li>
+        <li>ip address</li>
     </ui>
-    <div id="content"></div>
-    <div id="txt"></div>
+    <h3 style="color: red;">content.innerHTML = this.responseText</h3>
+    <div id="content" style="border: red solid 1px; background-color: lightblue; padding: 20px;"></div>
+
+    <h3 style="color: red;">content.innerText = this.responseText</h3>
+    <div id="txt" class="divtxt" style="border: red solid 1px; background-color: lightblue;"></div>
 </body>
 
 </html>
