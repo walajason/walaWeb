@@ -25,18 +25,18 @@
             var req = new XMLHttpRequest();
             var gPageAddr = "https://walajason.github.io/walaweb/"
                 //var gPageAddr = "http://127.0.0.1:5500/";
-
-            req.open("get", gPageAddr + PageNa);
-            alert(gPageAddr + PageNa);
-            req.onload = function() { //load事件, 偵測連線的狀態結束
-                //連線完成
-                var content = document.getElementById("content");
-                //alert(this.responseText);
-                content.innerHTML = this.responseText;
-                var txt = document.getElementById("txt");
-                txt.innerText = this.responseText;
-            };
-            req.send(); //送出連線
+                /*
+                            req.open("get", gPageAddr + PageNa);
+                            req.onload = function() { //load事件, 偵測連線的狀態結束
+                                //連線完成
+                                var content = document.getElementById("content");
+                                //alert(this.responseText);
+                                content.innerHTML = this.responseText;
+                                var txt = document.getElementById("txt");
+                                txt.innerText = this.responseText;
+                            };
+                            req.send(); //送出連線
+                            */
             window.open(gPageAddr + PageNa);
         }
 
@@ -100,7 +100,7 @@
         <li onclick="getData('a15.html')">CSS3 常用指令</li>
         <li onclick="getData('a16.html')">HTML5 DOM Convas繪圖</li>
         <li onclick="getData('a17.html')">HTML5 DOM Convas影像</li>
-        <li onclick="getData('a18.html')">HTML5 DOM Video 影音波放控制</li>
+        <li onclick="getData('a18.html')">HTML5 DOM Video 影音播放控制</li>
         <li onclick="getData('a19.html')">CSS 3-animation 動畫特效製作</li>
         <li onclick="getData('a20.html')">CSS 3-transition & Javascript 動畫特效製作</li>
         <li onclick="getData('a21.html')">純Javascript 動畫特效製作</li>
