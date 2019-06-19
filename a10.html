@@ -25,18 +25,18 @@
             var req = new XMLHttpRequest();
             var gPageAddr = "https://walajason.github.io/walaweb/"
                 //var gPageAddr = "http://127.0.0.1:5500/";
-                /*
-                            req.open("get", gPageAddr + PageNa);
-                            req.onload = function() { //load事件, 偵測連線的狀態結束
-                                //連線完成
-                                var content = document.getElementById("content");
-                                //alert(this.responseText);
-                                content.innerHTML = this.responseText;
-                                var txt = document.getElementById("txt");
-                                txt.innerText = this.responseText;
-                            };
-                            req.send(); //送出連線
-                            */
+
+            req.open("get", gPageAddr + PageNa);
+            req.onload = function() { //load事件, 偵測連線的狀態結束
+                //連線完成
+                var content = document.getElementById("content");
+                //alert(this.responseText);
+                content.innerHTML = this.responseText;
+                var txt = document.getElementById("txt");
+                txt.innerText = this.responseText;
+            };
+            req.send(); //送出連線
+
             window.open(gPageAddr + PageNa);
         }
 
