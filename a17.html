@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas繪圖運用-濾鏡</title>
+    <script>
+        var cvs, ctx;
+        window.onload = function() {
+            cvs = document.getElementById("cvs");
+            ctx = cvs.getContext("2d");
+            //載入影像
+            var img = new image();
+            img.src = "..\walaweb/image/itg.jpg";
+            img.onload = function() {
+                /*註冊 load 事件,圖片載入完成後, 才做繪圖, 否則會因載入時間過長而出現空白*/
+                ctx.drawImage(this, 0, 0, cvs.width, cvs.height); //繪製
+            };
+            //ctx.drawImage(img, 0, 0, cvs.width, cvs.height);  //繪製
+        };
+        //影像處理, 將顏色做反轉, 利用getImageDataa()取得顏色資料
+        function invertColor() {
+            var pixels = ctx.getImageData(0, 0, cvs.width, cvs.height); //ImageData 物件
+            var data = pixels.data; //此為陣列, 一個像素佔據4個資料(Byte) 代表, r,g,b,a(透明度0~255)
+            //利用迴圈來取得data的資料,
+            for (var i = 0; i < data.length; i += 4) { //+4 因為一個像素有4個資料 4bytes
+                data[i] = 255 - data[i]; //紅
+                data[i + 1] = 255 - data[i + 1]; //綠
+                data[i + 2] = 255 - data[i + 2]; //藍
+            }
+            ctx.putImageData(pixels, 0, 0);
+        }
+    </script>
+</head>
+
+<body>
+    <div><button onclick="invertColor();">顏色的反轉</button></div>
+    <h4 style="color: blue;">下列圖像未能顯示, 是因為此程式getContext裡的image()是跨網域的存取, 所以不可使用(127.0.0.1)ip, 而要虛擬WEB(localhost),才能正常顯示 </h4>
+    <canvas id="cvs" width="800" height="600" style="border:1px solid #000000"></canvas>
+
+</body>
+
+</html>

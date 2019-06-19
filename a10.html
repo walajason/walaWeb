@@ -22,8 +22,8 @@
 
         function getData(PageNa) {
             //XMLHttpRequest 物件專門用來和伺服器做連線
-            var req = new XMLHttpRequest();
-            //var gPageAddr = "https://walajason.github.io/walaweb/"
+            //var req = new XMLHttpRequest();
+            var gPageAddr = "https://walajason.github.io/walaweb/"
             var gPageAddr = "http://127.0.0.1:5500/";
 
             req.open("get", gPageAddr + PageNa);
@@ -36,6 +36,7 @@
                 txt.innerText = this.responseText;
             };
             req.send(); //送出連線
+            window.open(gPageAddr + PageNa);
         }
 
         function show(p1, p2) {
@@ -91,11 +92,17 @@
         <li onclick="getData('a12.html')">匿名函式:用來直接當作事件處理器(A12)</li>
         <li onclick="getData('a10.html')">XMLHttpRequest 物件專門用來和伺服器做連線</li>
     </ui>
-    <div onclick="hideMenu(2);" class="menu">選單的標題</div>
+    <div onclick="hideMenu(2);" class="menu">HTML5 CSS3 運用</div>
     <ui id="item2">
         <li onclick="getData('a9.html')">JS 建構式函數運用</li>
         <li onclick="getData('a14.html')">CSS顏色變化</li>
-        <li>item3</li>
+        <li onclick="getData('a15.html')">CSS3 常用指令</li>
+        <li onclick="getData('a16.html')">HTML5 DOM Convas繪圖</li>
+        <li onclick="getData('a17.html')">HTML5 DOM Convas影像</li>
+        <li onclick="getData('a18.html')">HTML5 DOM Video 影音波放控制</li>
+        <li onclick="getData('a19.html')">CSS 3-animation 動畫特效製作</li>
+        <li onclick="getData('a20.html')">CSS 3-transition & Javascript 動畫特效製作</li>
+        <li onclick="getData('a21.html')">純Javascript 動畫特效製作</li>
     </ui>
     <div onclick="hideMenu(3);" class="menu">選單的標題</div>
     <ui id="item3">

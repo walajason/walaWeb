@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas繪圖運用 JS</title>
+    <script>
+        window.onload = function() {
+            var cvs = document.getElementById("cvs");
+            var ctx = cvs.getContext("2d"); //取得 Context Object*/
+            ctx.fillStyle = "red"; //改變樣式
+            ctx.globalAlpha = 0.5; //改變透明度 0~1
+            ctx.fillRect(50, 50, 100, 100); //依座標位置產生一個方形, 並填滿顏色(X座標, Y座標,長,寬)
+            //strocke 描邊
+            ctx.globalAlpha = 1;
+            ctx.strokeStyle = "blue"; //改變描邊線條顏色
+            ctx.strokeRect(200, 200, 50, 50);
+            // Path 路徑
+            ctx.beginPath();
+            ctx.moveTo(200, 100); //移動當前所在的位置
+            ctx.lineTo(300, 300); //畫線到此位置
+            ctx.closePath();
+            ctx.stroke(); // 描邊 or ctx.fill();
+            // 利用路徑畫出多邊形
+            ctx.beginPath();
+            ctx.moveTo(300, 300);
+            ctx.lineTo(400, 350);
+            ctx.lineTo(250, 400);
+            ctx.closePath();
+            ctx.fill();
+        }
+    </script>
+</head>
+
+<body>
+    <h5>Canvas 是HTML5新增的，一個可以使用腳本(通常為JavaScript)在其中繪製圖像的HTML元素</h5>
+    <canvas id="cvs" width="800" height="600" style="border:1px solid #000000"></canvas>
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3 常用指令</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            opacity: 0.8;
+            transform: rotate(45deg);
+        }
+        
+        .skew {
+            transform: skew(-45deg, 0deg);
+            background-color: lightpink;
+        }
+        
+        .inline {
+            display: inline-block;
+        }
+        
+        .radi {
+            border-radius: 10%;
+        }
+        
+        .shadow {
+            box-shadow: 10px 10px 20px #000000;
+        }
+        
+        .txtshadow {
+            text-shadow: 2px 2px 5px blue;
+        }
+        
+        .tranMove {
+            transform: translate(100px, 100px);
+            background-color: green;
+            transition: 1000s;
+        }
+        
+        .top {
+            width: 240px;
+            height: 60px;
+            background-color: #dddddd;
+        }
+        
+        .center {
+            width: 240px;
+            height: 240px;
+            background-color: #1e32eb;
+            display: inline-block;
+        }
+        
+        .right {
+            width: 60px;
+            height: 240px;
+            background-color: #888888;
+            display: inline-block;
+        }
+        /**/
+        
+        .top2 {
+            width: 240px;
+            height: 60px;
+            background-color: #dddddd;
+            transform: skew(-45deg, 0deg) translate(30px, 0px);
+        }
+        
+        .center2 {
+            width: 240px;
+            height: 240px;
+            background-color: #1e32eb;
+            display: inline-block;
+            margin-right: -4px;
+        }
+        
+        .right2 {
+            width: 60px;
+            height: 240px;
+            background-color: #888888;
+            display: inline-block;
+            transform: skew(0deg, -45deg) translate(0px, -30px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cube">
+        <div class="top"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+    <p>CSS3 線性轉換,利用 css display: inline-block 讓div不斷行</p>
+    <div style="display: inline-block;">
+        <div class="top"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+    <div style="width:100px;display: inline-block;border:white solid">
+
+    </div>
+    <div style="display: inline-block;">
+        <div class="top2"></div>
+        <div class="center2"></div>
+        <div class="right2"></div>
+    </div>
+    <p>CSS3 線性轉換, 中間空隙, 將第二及第三個div程式連起來即可解決, 或margin-right設為-4px</p>
+    <h4>display: inline不能指定元素寬度，display: block可指定寬度但會強制換行，為兼顧指定寬度及並排，<span style="color:red;">採用display: inline-block樣式。但在inline-block模式下，元素HTML標籤間的空白、換行及Tab字元將佔用一格空間（依HTML規範，連續多個空白只會保留一個），以上範例，</span>與下一個<span style="color:blue">間有換行符號及Tab定位字元，視為一個空白，即<span>間空隙的由來。</h4>
+    <h4><a href="https://blog.darkthread.net/blog/inline-block-redundant-space/">取消空白間隙的方法</a></h4>
+    <div class="box inline">方塊顏色透明度opacity</div>
+    <div class="box radi inline">方塊圓角border-radius</div>
+    <div class="box radi shadow inline">陰影box-shadow(水平,垂直,OPTION 距離)</div>
+    <div class="box radi shadow txtshadow inline">文字陰影text-shadow(水平,垂直,OPTION 距離)</div>
+    <p>CSS3 線性轉換, 位移, 縮放, 旋轉, 歪斜</p>
+    <div class="box tranMove">位移transform:translate()</div>
+    <div class="box scarexy">縮放transform:scale(x,y)</div>
+    <div class="box skew">x正歪斜45度transform:skew(x deg,y deg)</div>
+</body>
+
+</html>

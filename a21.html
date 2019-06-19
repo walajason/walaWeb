@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>純Javascript 動畫特效製作</title>
+    <script type="text/javascript">
+        function show() {
+            var box = document.getElementById("box");
+            //取得當前box的尺寸設定
+            var styles = window.getComputedStyle(box);
+            //取出寬
+            var size = styles.getPropertyValue("width");
+            //取出寬度的格式為50px 含單位, 所以要做轉換
+            size = parseInt(size);
+            //產生一個放大的動畫效果 利用 setInterval() 定時做動作
+            var animeid = window.setInterval(function() {
+                //設應停止條件
+                if (size >= 200) {
+                    //停止動畫
+                    window.clearInterval(animeId); //清除排程, 清除需要id , 於是宣告
+                    return;
+                };
+                //先調整數值
+                size++;
+                //把數值放進box的css設定中, 產生實際效果
+                box.style.width = size + "px" //size已經被轉換為數值
+                box.style.height = size + "px"
+            }, 5); //每0.02秒執行一次我們提供的函數
+        }
+    </script>
+    <style type="text/css">
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: fixed;
+            top: 0px;
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box" onclick="show();"></div>
+</body>
+
+</html>

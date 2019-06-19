@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 3-transition & Javascript</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            var box = document.getElementById("box");
+            box.addEventListener("mouseover", function() {
+                this.style.opacity = 1; //淡入
+                this.style.backgroundColor = "blue";
+            });
+            box.addEventListener("mouseout", function() {
+                this.style.opacity = 0.5; //淡出
+                this.style.backgroundColor = "red";
+            });
+        };
+    </script>
+    <style type="text/css">
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            opacity: 0.5;
+            transition: opacity 0.5s;
+            /*此可監控opcity屬性, 一旦我們用Javascript對opacity進行設定,自動漸變處理*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">css3 transition: opacity; 監控opacity屬性(可同時多屬性處理), 一旦我們用Javascript對opacity進行設定,自動漸變處理</div>
+</body>
+
+</html>

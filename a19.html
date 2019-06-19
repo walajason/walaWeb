@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 3 animation 動畫/特效</title>
+    <script type="text/javascript">
+        function start() {
+            var text = document.getElementById("text");
+            text.classList.add("effect");
+        }
+    </script>
+    <style type="text/css">
+        /*定義css動畫效果呈現*/
+        
+        .effect {
+            /*定義animation動畫屬性指向blink,  時間維持1秒  infinite: 持續反覆進行*/
+            animation: blink 1s infinite;
+        }
+        /*定義動畫: @keyframes定義指令 blink自行取名*/
+        
+        @keyframes blink {
+            /*定義透明度的層級*/
+            0% {
+                opacity: 0;
+            }
+            /*中斷點可自行增加*/
+            50% {
+                opacity: 1;
+                color: red;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--增加按鈕互動效果, 利用javascript處理-->
+    <div id="text">Hello Word</div>
+    <button onclick="start();">Start</button>
+    <!-- 進網頁即開始執行<div class="effect">Hello World</div>
+        -->
+</body>
+
+</html>

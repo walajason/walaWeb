@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5 DOM Video影音播放控制</title>
+    <script type="text/javascript">
+        var video;
+        window.onload = function() {
+            video = document.getElementById("video"); //HTML DOM
+            video.addEventListener("timeupdate", updateTimer); //HTML DOM
+            video.addEventListener("ended", function() {
+                alert("Ended");
+            });
+        };
+
+        function updateTimer() {
+            var timer = document.getElementById("timer");
+            timer.innerHTML = video.currentTime + "/" + video.duration;
+        }
+
+        function playVideo() {
+            video.play();
+        }
+
+        function pauseVideo() {
+            video.pause();
+        }
+
+        function replayVideo() {
+            //video.replay(); 函數不提供replay功能, 需自行撰寫
+            video.currentTime = 0; //目前播放的時間設為零
+            video.play();
+        }
+    </script>
+</head>
+
+<body>
+    <VIdeo id="video" src="./image/宜瑾韓國水槍節.mp4">自行開發播放影片</VIdeo>
+    <div>
+        <button onclick="playVideo();">Play</button>
+        <button onclick="pauseVideo();">Pause</button>
+        <button onclick="replayVideo();">Replay</button>
+        <span id="timer"></span>
+        <!--//事件處理-->
+    </div>
+    <!--<VIdeo src="./image/宜瑾韓國水槍節.mp4" controls autoplay></VIdeo>    //函數本身控制器-->
+</body>
+
+</html>
