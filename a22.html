@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SVG 向量繪圖</title>
+</head>
+
+<body>
+    <!--利用svg產生一個畫布   FILL 填滿  STROKE 描邊 -->
+    <svg width="640" heitht="1024" style="border:1px solid #000000;">
+        <line x1="50" y1="50" x2="350" y2="350" stroke="red" stroke-width="2"></line>
+        <circle cx="200" cy="50" r="50" fill="#ffcc00" ></circle>
+        <rect x="150" y="100" width="100" height="100" fill="blue"></rect>
+        <!--多邊形-->
+        <polygon points="150,200,250,200,200,300" fill="black"></polygon>
+        <!--填滿文字-->
+        <text x="100" y="350" fill="green" font-weight="bold" font-size="45">Hello SVG</text>
+    </svg>
+
+</html>
