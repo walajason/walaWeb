@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函式綁定物件 this 進階篇 </title>
+</head>
+
+<body>
+    <h4>使用call呼叫函式</h4>
+    <h4>函式名稱.call(綁定物件,參數資料,...)</h4>
+    <h4></h4>
+    <h4></h4>
+    <h4>使用apply呼叫函式</h4>
+    <h4>函式名稱.apply(綁定物件,[參數資料,...] )</h4>
+    <h4></h4>
+    <h4></h4>
+    <h4>基本呼叫</h4>
+    <h4>函式名稱(參數資料,...)</h4>
+    <h4></h4>
+    <h4></h4>
+    <h4>function test(){</h4>
+    <h4> console.log(this)</h4>
+    <h4>}</h4>
+    <h4>test(); //使用預設的綁定物件</h4>
+    <h4>let test2=test.bind({x:});</h4>
+    <h4>tet2(); //新的綁定物件是{x:3}</h4>
+    <script>
+        //this代表函式的 綁定物件, 通常在函式中使用
+        //不同的程式碼脈絡下, 綁定物件 代表不同的東西
+        //基礎: 了解綁定物件在不同基本脈絡下的變化
+        //情況一 獨立的函式
+        /*
+        function test() {
+            console.log(this); //獨立的函式中, this 就是window物件
+            console.log(this.innerwidth); //印出視窗的寬度
+        };
+        //情況二 物件的方法
+        let obj = {
+            x: 3, //屬性
+            test: function() {
+                console.log(this); //function就是方法, this就是方法所屬的物件本身
+                console.log(this.x); //印出物件的屬性 x
+            }
+        };
+        //呼叫obj
+        obj.test();
+
+        //情況三 事件處理函式
+        document.addEventListener("click", function() {
+            console.log(this); //this 就是觸發事件的對象物件
+            this.body.innerHTML = "Clicked";
+        });
+        //情況四 建構函式 不同於一般函式, 主要在呼叫的不同
+        function Point() {
+            console.log(this); //this 就是瀏覽器自動幫我們所建立好的空白物件
+            this.x = 3;
+            this.y = 4;
+        };
+        let p1 = new Point();
+        console.log(p1);
+        */
+        //進階:自訂的綁定物件
+        //使用bind重新綁定物件
+        function test() {
+            console.log("綁定物件", this);
+        }
+        test();
+        let test2 = test.bind({
+            x: 3
+        }); //綁定一個新的綁定物件並且回傳一個新的函式
+        let test3 = test.bind(document);
+        test3();
+
+        //使用apply呼叫函式, 可自己設定綁定物件
+        function add(n1, n2) {
+            console.log("結果", n1 + n2);
+            console.log("綁定物件", this);
+        }
+        add(3, 4); //基本呼叫
+        add.apply({
+            y: 4
+        }, [4, 5]); //參數: 綁定物件, 用陣列 [4,5]
+        add.apply(document, [5, 6]);
+        //使用call 呼叫函式, 可自己設定綁定物件
+        add.call({
+            z: 10
+        }, 10.4);
+    </script>
+</body>
+
+</html>
