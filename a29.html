@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS/Javascript 控制捲軸</title>
+    <script>
+        var box;
+        window.onload = function() {
+            box = document.getElementById("box");
+            // HTML Element 中的 scrollLeft 和 scrollTop 屬性
+            //box.scrollTop=0;
+            //另一種做法, 將box挪至function外, 作為全域變數
+            window.setInterval(scroll, 50); //設定自動 排程設定
+        };
+
+        function scroll() {
+            box.scrollTop++;
+        };
+    </script>
+    <style>
+        .box {
+            border: 1px solid #000000;
+            width: 200px;
+            height: 80px;
+            /*若為auto則會自動延展, 所以要設定固定值 */
+            overflow: auto;
+            /*行列都會自動產生*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="box">
+        <div>This is a line</div>
+        <div>This is a line</div>
+        <div>This is a line</div>
+        <div>This is a line</div>
+        <div>This is a line</div>
+        <div>This is a line</div>
+        <div>This is a line</div>
+        <div>This is a line</div>
+        <div>This is a line</div>
+        <div>This is a line</div>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

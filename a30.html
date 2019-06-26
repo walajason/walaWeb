@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form 表單設計與驗證</title>
+    <style>
+        form {
+            line-height: 2em;
+        }
+        
+        form>input,
+        form>select {
+            /*選擇棄 或 的表示法*/
+            padding: 5px 10px;
+            border: 1px solid #888888;
+            border-radius: 5px;
+        }
+        
+        form>.ok {
+            color: #008800;
+        }
+        
+        form>input:valid+.ok {
+            display: inline;
+        }
+        
+        form>input:invalid+.ok {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>註冊帳號</h3>
+    <form onsubmit="alert('表單送出');">
+        帳號: <input type="text" required placeholder="4~12 英數字" pattern="[0-9a-zA-Z] {4,12}" /><span class="ok">ok</span>(只接受[0-9a-zA-Z] {4-12} 個字)正規表示式 Regular Expression or placeholder=""提示文字<br/> 密碼: <input type="password" required /><span class="ok">ok</span>required
+        與 valid是相呼應的<br/> 電郵: <input type="email" required /><span class="ok">ok</span><br/> 電話: <input type="text" pattern="(0-8){8,10}" placeholder="(0-8){8,10}" /><br/> 性別: 男
+        <input name="gender" type="radio" value="male"> 女
+        <input name="gender" type="radio" value="female"><br/> 生日: <select required>
+    <option value="">出生年</option>
+    <option value="1999">1999</option>
+    <option value="1998">1998</option>
+</select><br/><br/>
+        <input type="submit" value="送出資料">
+    </form>
+</body>
+
+</html>
