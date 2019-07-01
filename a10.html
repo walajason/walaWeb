@@ -57,7 +57,7 @@
         }
     </script>
     <style type="text/css">
-        .hide {
+            .hide {
             display: none;
         }
         
@@ -82,11 +82,29 @@
             font-size: 20px;
             color: red;
         }
+        
+        ui>li:nth-of-type(3n) {
+            color: coral;
+            animation: myfirst 30s;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes myfirst {
+            0% {
+                font-size: 100%;
+            }
+            50% {
+                font-size: 150%;
+            }
+            100% {
+                bfont-size: 200%;
+            }
     </style>
 
 </head>
 
 <body>
+    <h2>css3: nth-of-type(3n)運用--ui>li 三的倍數顯示紅色</h2>
     <div onclick="hideMenu(1);" class="menu">Javascript AJAX</div>
     <ui id="item1">
         <li onclick="getData('a11.html')">用Javascript 的程式, 動態的註冊式建處理器(A11)</li>
@@ -109,20 +127,19 @@
             <a href="https://youtu.be/9kuX53_FshU">YouTube連結</a>
         </li>
         <li onclick="getData('a24.html')">建立使用者操作介面</li>
-        <li onclick="getData('a26.html')">HTML5 語意標籤</li>
-        <a href="https://youtu.be/C8k39ssZ6nQ">YouTube連結</a>
+        <li onclick="getData('a26.html')">HTML5 語意標籤<a href="https://youtu.be/C8k39ssZ6nQ">YouTube連結</a></li>
         </li>
-        <li onclick="getData('a27.html')">函式綁定物件 This 基本篇</li>
-        <a href="https://youtu.be/5Vi5idUkuyA">YouTube連結</a>
+        <li onclick="getData('a27.html')">函式綁定物件 This 基本篇
+            <a href="https://youtu.be/5Vi5idUkuyA">YouTube連結</a></li>
         </li>
     </ui>
     <div onclick="hideMenu(3);" class="menu">CSS/Javascript 運用</div>
     <ui id="item3">
-        <li onclick="getData('a29.html')">CSS/Javascript 控制捲軸</li>
-        <a href="https://youtu.be/YVSrQAeyd6E">YouTube連結</a>
+        <li onclick="getData('a29.html')">CSS/Javascript 控制捲軸
+            <a href="https://youtu.be/YVSrQAeyd6E">YouTube連結</a></li>
         <li onclick="getData('a30.html')">Form 表單設計與驗證</li>
-        <li onclick="getData('a31.html')">跳出式網頁對話框</li>
-        <a href="https://youtu.be/GqePRjBba6k">YouTube連結</a>
+        <li onclick="getData('a31.html')">跳出式網頁對話框
+            <a href="https://youtu.be/GqePRjBba6k">YouTube連結</a></li>
     </ui>
     <h3 style="color: red;">content.innerHTML = this.responseText</h3>
     <div id="content" style="border: red solid 1px; background-color: lightblue; padding: 20px;"></div>
