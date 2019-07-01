@@ -57,7 +57,7 @@
         }
     </script>
     <style type="text/css">
-            .hide {
+        .hide {
             display: none;
         }
         
@@ -99,6 +99,21 @@
             100% {
                 bfont-size: 200%;
             }
+        }
+        
+        .imgShow {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        
+        .imgShow:hover {
+            top: 0px;
+            left: 0px;
+            position: relative;
+            transform: scale(20, 20);
+        }
     </style>
 
 </head>
@@ -107,6 +122,10 @@
     <h2>css3: nth-of-type(3n)運用--ui>li 三的倍數顯示紅色</h2>
     <div onclick="hideMenu(1);" class="menu">Javascript AJAX</div>
     <ui id="item1">
+        <li>圖檔放大顯示</li>
+        <div class="imgShow">
+            <img style="width: 40px; height: 40px;" src="https://i.pinimg.com/564x/3c/c2/00/3cc20023c98336ad18949a1d854724e1.jpg" alt="">
+        </div>
         <li>CSS 選擇器元素列表
             <a href="http://www.runoob.com/cssref/css-selectors.html">YouTube連結</a></li>
         <li onclick="getData('a11.html')">用Javascript 的程式, 動態的註冊式建處理器(A11)</li>
