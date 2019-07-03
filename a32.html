@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圖片輪播效果</title>
+    <style>
+        div.eg-CSS3-transitions,
+        div.eg-normal {
+            width: 250px;
+            padding: 15px;
+            background-color: #83cdbe;
+            margin: 0.5em;
+            box-sizing: border-box;
+            color: #fff;
+        }
+        
+        div.eg-CSS3-transitions:hover,
+        div.eg-normal:hover {
+            width: 300px;
+        }
+        
+        div.eg-CSS3-transitions {
+            -webkit-transition: width 1s;
+            transition: width 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="eg-CSS3-transitions">
+        滑鼠滑上來看看<br> 使用CSS3 transitions漸變效果
+    </div>
+    <div class="eg-normal">
+        滑鼠滑上來看看<br> 沒有CSS3 transitions漸變效果
+    </div>
+</body>
+
+</html>
