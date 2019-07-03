@@ -26,15 +26,111 @@
             -webkit-transition: width 1s;
             transition: width 1s;
         }
+        
+        img {
+            width: 300px;
+            height: 400px;
+        }
+        
+        .slider_container {
+            margin: 30px auto;
+            width: 300px;
+            height: 400px;
+            position: relative;
+            border: 20px solid;
+            border-color: #fff;
+            border-bottom-width: 100px;
+            background-color: #f5f5f5;
+            box-shadow: #666 0 0 5px;
+        }
+        
+        .slider_container div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            /*透明度 0 完全透明*/
+            filter: alpha(opacity=0);
+            /*濾鏡*/
+            -webkit-animation: round 25s linear infinite;
+            animation: round 25s infinite;
+        }
+        
+        @-webkit-keyframes round {
+            4% {
+                opacity: 1;
+                filter: alpha(opacity=50);
+                /* 0 - 1秒 淡入*/
+            }
+            20% {
+                opacity: 1;
+                filter: alpha(opacity=100);
+                /* 1- 5秒靜止*/
+            }
+            24% {
+                opacity: 1;
+                filter: alpha(opacity=0);
+                /* 5-6秒淡出*/
+            }
+        }
+        /*每張進場相隔五秒*/
+        /*.slider_container div:nth-child(5) {
+            -webkit-animation-delay: 0s;
+            animation-delay: 2s;
+            background-color: #83cdbe
+        }*/
+        
+        .slider_container div:nth-child(4) {
+            -webkit-animation-delay: 5s;
+            animation-delay: 4s;
+            background-color: red;
+        }
+        
+        .slider_container div:nth-child(3) {
+            -webkit-animation-delay: 10s;
+            animation-delay: 6s;
+            background-color: blue;
+        }
+        
+        .slider_container div:nth-child(2) {
+            -webkit-animation-delay: 15s;
+            animation-delay: 8s;
+            background-color: yellow;
+        }
+        
+        .slider_container div:nth-child(1) {
+            -webkit-animation-delay: 20s;
+            animation-delay: 10s;
+            background-color: purple;
+        }
     </style>
 </head>
 
 <body>
+    <!--
     <div class="eg-CSS3-transitions">
         滑鼠滑上來看看<br> 使用CSS3 transitions漸變效果
     </div>
     <div class="eg-normal">
         滑鼠滑上來看看<br> 沒有CSS3 transitions漸變效果
+    </div>-->
+    <div class="slider_container">
+        <div>
+            <img src="https://i.pinimg.com/564x/0f/fd/61/0ffd612018bd5c0af68d48c2f809bda3.jpg" alt="101">
+            <span>101</span>
+            <div>
+                <img src="https://i.pinimg.com/564x/aa/1e/76/aa1e7655f37a1b8f2e3c3460029edb57.jpg" alt="Rachel weiss">
+                <span>rachel weiss</span></div>
+            <div>
+                <img src="https://i.pinimg.com/564x/96/75/0e/96750e2bfaf8af228fe63866229abc40.jpg" alt="INDIANA JONES">
+                <span>INDIANA JONES</span></div>
+            <div>
+                <img src="https://i.pinimg.com/564x/e9/a3/b2/e9a3b248b9dbf36a62d03b18e11da45e.jpg" alt="Rachel weiss 2">
+                <span>Rachel weiss 2</span></div>
+            <div>
+                <img src="https://i.pinimg.com/564x/46/0a/a1/460aa17285152d07ac4990487f51adf0.jpg" alt="cathedral">
+                <span>cathedral</span></div>
+        </div>
     </div>
 </body>
 
