@@ -18,7 +18,7 @@
             background-color: #f5f5f5;
             box-shadow: #666 0 0 5px;
         }
-        
+
         .coverflow>a {
             display: block;
             position: absolute;
@@ -30,14 +30,14 @@
             -webkit-animation: silder 15s linear infinite;
             animation: silder 15s linear infinite;
         }
-        
+
         .coverflow>a>img {
             /*max-width: 100%;*/
             width: 400px;
             height: 600px;
         }
         /*動畫關鍵影格*/
-        
+
         @-webkit-keyframes silder {
             3% {
                 opacity: 1;
@@ -52,7 +52,7 @@
                 filter: alpha(opacity=0);
             }
         }
-        
+
         @keyframes silder {
             3% {
                 opacity: 1;
@@ -68,20 +68,25 @@
             }
         }
         /*每個圖片各延遲5秒*/
-        
+
         .coverflow>a:nth-child(3) {
             -webkit-animation-delay: 10s;
             animation-delay: 10s;
         }
-        
+
         .coverflow>a:nth-child(2) {
             -webkit-animation-delay: 5s;
             animation-delay: 5s;
         }
-        
+
         .coverflow>a:nth-child(1) {
             -webkit-animation-delay: 0s;
             animation-delay: 0s;
+        }
+
+        .coverflow:hover>a {
+            -webkit-animation-play-state: paused;
+            animation-play-state: paused;
         }
     </style>
 </head>
